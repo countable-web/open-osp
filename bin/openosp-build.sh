@@ -23,7 +23,7 @@ case $COMPONENT in
         if [ -z $WARFILE ]; then
             echo "Compiling OSCAR warfile. This may take some time...."
             docker compose  -f docker-compose.build.yml run --rm builder ./bin/build-oscar.sh
-            mv $OSCAR_OUTPUT/oscar/target/oscar-*-SNAPSHOT.war $OSCAR_OUTPUT/oscar.war
+            mv $OSCAR_OUTPUT/oscar/target/oscar-*.war $OSCAR_OUTPUT/oscar.war
         else
             mkdir -p $OSCAR_OUTPUT
             cp $WARFILE $OSCAR_OUTPUT/oscar.war
